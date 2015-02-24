@@ -138,7 +138,7 @@ vows.describe('ISDK Calls').addBatch({
     },
     "createBlankOrder": {
       topic: function (isdk) {
-        isdk.createBlankOrder(1, 'TestBlankOrder', null, 0, 0, this.callback);
+        isdk.createBlankOrder(1, 'TestBlankOrder', '20150224T14:08:55', 0, 0, this.callback);
       },
       "must match xml": assertXml('createBlankOrder_call')
     },
@@ -150,7 +150,7 @@ vows.describe('ISDK Calls').addBatch({
     },
     "addManualPayment": {
       topic: function (isdk) {
-        isdk.addManualPayment(5, 120, null, 'Cash', 'TestPayment', true, this.callback);
+        isdk.addManualPayment(5, 120, '20150224T14:08:55', 'Cash', 'TestPayment', true, this.callback);
       },
       "must match xml": assertXml('addManualPayment_call')
     },
