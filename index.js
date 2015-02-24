@@ -133,7 +133,7 @@ iSDK.prototype.dsQuery = function (tableName, limit, page, query, rFields, order
 };
 
 iSDK.prototype.createBlankOrder = function (contactId, description, date, leadAffiliateId, saleAffiliateId, callback) {
-	var ca = [this.apiKey, contactId, description, date, leadAffiliateId || 0, saleAffiliateId || 0];
+	var ca = [this.apiKey, contactId, description, new types.Date(date), leadAffiliateId || 0, saleAffiliateId || 0];
 	this.methodCaller('InvoiceService.createBlankOrder', ca, callback);
 };
 
@@ -143,7 +143,7 @@ iSDK.prototype.addOrderItem = function (invoiceId, productId, type, price, quant
 };
 
 iSDK.prototype.addManualPayment = function (invoiceId, amt, paymentDate, paymentType, paymentDescription, bypassCommissions, callback) {
-	var ca = [this.apiKey, invoiceId, new types.Double(amt), paymentDate, paymentType, paymentDescription, bypassCommissions || false];
+	var ca = [this.apiKey, invoiceId, new types.Double(amt), new types.Date(paymentDate), paymentType, paymentDescription, bypassCommissions || false];
 	this.methodCaller('InvoiceService.addManualPayment', ca, callback);
 };
 

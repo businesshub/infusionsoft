@@ -10,6 +10,13 @@ lib-cov
 pids
 logs
 results
+*.pid
+*.seed
+
+lib-cov
+coverage
+.lock-wscript
+npm-debug.log
+.idea
 
 node_modules
-npm-debug.log
